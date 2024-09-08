@@ -9,7 +9,7 @@ export default async function TasksPage() {
 	const tasks = await getAllTasks()
 
 	return (
-		<div className="flex h-full w-full grid-cols-1 flex-col gap-4">
+		<div className="flex flex-grow flex-col gap-4">
 			<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 				<Card className="p-3">
 					<ScorePointsChart />
@@ -22,7 +22,7 @@ export default async function TasksPage() {
 				</Card>
 			</div>
 
-			<Card className="order-first flex-grow overflow-hidden p-4 sm:order-2">
+			<Card className="flex-grow overflow-hidden p-4">
 				<TasksTable data={tasks} columns={columns} />
 			</Card>
 		</div>

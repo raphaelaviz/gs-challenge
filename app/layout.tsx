@@ -16,14 +16,13 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body className="sm:h-screen sm:overflow-hidden">
+		<html lang="en" className="h-full">
+			<body className="flex h-full flex-col">
 				<ReactQueryProviders>
 					<ReactQueryDevtools initialIsOpen={false} />
-					<div className="flex h-full">
+					<div className="flex flex-grow">
 						<Sidenav />
-
-						<main className="flex w-full flex-col px-2 py-2 sm:px-8 sm:py-4">
+						<main className="flex flex-grow flex-col overflow-auto px-2 py-2 sm:px-8 sm:py-4">
 							<Header />
 							{children}
 						</main>
