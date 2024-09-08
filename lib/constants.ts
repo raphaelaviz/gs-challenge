@@ -5,9 +5,9 @@ import { PiTextAlignJustifyFill } from 'react-icons/pi'
 import { FaClipboardCheck } from 'react-icons/fa'
 
 export const sideNavItems = [
-	{ id: 'item1', icon: FaClipboardCheck },
-	{ id: 'item2', icon: MdWork },
-	{ id: 'item3', icon: PiTextAlignJustifyFill },
-	{ id: 'item4', icon: FaAddressCard },
-	{ id: 'item5', icon: MdLocalHospital }
+	{ id: 'item1', href: '/tasks', icon: FaClipboardCheck },
+	{ id: 'item2', href: '/tasks', icon: MdWork },
+	{ id: 'item3', href: '/tasks', icon: PiTextAlignJustifyFill },
+	{ id: 'item4', href: '/tasks', icon: FaAddressCard },
+	{ id: 'item5', href: '/tasks', icon: MdLocalHospital }
 ]

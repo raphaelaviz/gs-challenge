@@ -1,3 +1,8 @@
+export interface ScorePointsInfo {
+	currentScorePoints: number
+	dailyGoal: number
+}
+
 export interface Task {
 	id: number
 	insurance_number: string | null

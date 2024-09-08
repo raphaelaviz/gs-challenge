@@ -149,9 +149,8 @@ export function TasksTable<TData extends { id: string | number }, TValue>({
 						<LoadingSpinner className="text-blue-600" />
 					</div>
 				)}
-				<div className="mt-auto">
-					<TasksTablePaginationButtons table={table} />
-				</div>
+
+				<TasksTablePaginationButtons table={table} />
 			</div>
 		</div>
 	)

@@ -18,7 +18,17 @@ const chartConfig = {
 	}
 } satisfies ChartConfig
 
-export function ScorePointsChart() {
+interface ScorePointsChartProps {
+	currentScorePoints: number
+	dailyGoal: number
+}
+
+export function ScorePointsChart({
+	currentScorePoints,
+	dailyGoal
+}: ScorePointsChartProps) {
+	const fillPercentage = (currentScorePoints / dailyGoal) * 360
+
 	return (
 		<ChartContainer
 			config={chartConfig}
@@ -26,7 +36,7 @@ export function ScorePointsChart() {
 		>
 			<RadialBarChart
 				data={chartData}
-				endAngle={100}
+				endAngle={fillPercentage}
 				innerRadius={80}
 				outerRadius={140}
 			>
@@ -66,7 +76,7 @@ export function ScorePointsChart() {
 											y={viewBox.cy}
 											className="fill-blue-600 text-4xl font-bold"
 										>
-											{chartData[0].points.toLocaleString()}
+											{currentScorePoints.toLocaleString()}
 										</tspan>
 										<tspan
 											x={viewBox.cx}

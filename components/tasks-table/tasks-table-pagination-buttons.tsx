@@ -11,7 +11,7 @@ export function TasksTablePaginationButtons<TData>({
 	table
 }: DataTablePaginationProps<TData>) {
 	return (
-		<div className="container flex items-center justify-between px-2 text-blue-600">
+		<div className="flex items-center justify-between text-blue-600 sm:px-6">
 			<Button
 				variant="ghost"
 				onClick={() => table.previousPage()}
