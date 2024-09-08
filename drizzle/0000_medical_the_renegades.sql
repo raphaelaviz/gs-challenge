@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS "tasks" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"contract_number" varchar(20) NOT NULL,
+	"insurance_number" varchar(20),
+	"status" "status" NOT NULL,
+	"insured_person_first_name" varchar(50),
+	"insured_person_last_name" varchar(50),
+	"gender" "gender",
+	"birthdate" date,
+	"ocr_birthdate" date,
+	"vpnr" varchar(10),
+	"telephone_number" varchar(20),
+	"address" varchar(255),
+	"task_type" varchar(50),
+	"score_points" integer,
+	"fee_regulation" varchar(10),
+	"tariff_regulation" varchar(10),
+	"skill_level" varchar(20),
+	"assigned_operator_id" integer,
+	"created_at" timestamp DEFAULT now(),
+	"updated_at" timestamp DEFAULT now()
+);
