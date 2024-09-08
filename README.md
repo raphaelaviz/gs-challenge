@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
 
-## Getting Started
+## How to Run
 
-First, run the development server:
+1. Ensure you have Node.js 18.18 or later installed.
+2. Clone this repository.
+3. Run the following commands:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Links
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   Deployed Application: [Live Demo](https://task-manager-olive-chi.vercel.app/tasks)
+    --- Vercel doesn't allow us to choose the domain name, hence the weird URL.
+-   Component Tree Overview: [Component Structure](https://tree-flow-umber.vercel.app/tree/91d08b4b-9696-4d51-ae1b-dd40db25c64c)
+    --- Click on the green icons to switch between component trees.
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+-   React
+-   TypeScript
+-   Tailwind CSS
+-   React Query for Data Fetching
+-   Zustand for State Management
+-   Next.js for a minimal backend
+-   PostgreSQL for the database
+-   Drizzle for ORM
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Challenge Requirements
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   [x] Mandatory Tech Stack
+    -   [x] React
+    -   [x] TypeScript
+    -   [x] Redux-like State Management Solution
+-   [x] Dynamic Task List
+-   [-] Responsive Design
+    -   The design is responsive for mobile and desktop, but might need to be tweaked for bigger screen sizes.
+-   [x] Moving to the next task upon completing, escalating or skipping the currenttask
+-   [x] Button to go back to task list
+    -   The icons on the sidenav are links to the Tasks Page.
+-   [x] Additional features (Bonus)
 
-## Deploy on Vercel
+    -   [x] Search functionality
+    -   [x] Filter functionality according to status
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   [x] Good to have
+    -   [x] Deployed Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Extra Features
+
+-   [x] Dynamic Chart
+-   The chart is dynamic and updates everytime a task is marked as Done. The value increments according to the Task Score.
+-   [x] Real task status updates
+-   Tasks status are updated upon clicking the Task Completed button and the Escalate Task button.
+-   [x] Simple confirmation dialog upon clicking the Power Button on the sidenav.
+-   The intent was to show a basic usage of the Zustand state management library, since I found no real application for it in this project.
