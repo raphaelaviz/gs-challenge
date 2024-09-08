@@ -22,7 +22,7 @@ export default function RootLayout({
 					<ReactQueryDevtools initialIsOpen={false} />
 					<div className="flex flex-grow">
 						<Sidenav />
-						<main className="flex flex-grow flex-col overflow-auto px-2 py-2 sm:px-8 sm:py-4">
+						<main className="container flex flex-grow flex-col overflow-auto px-2 py-2 sm:px-8 sm:py-4">
 							<Header />
 							{children}
 						</main>
