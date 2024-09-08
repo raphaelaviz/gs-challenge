@@ -17,7 +17,7 @@ const CardsSection = ({ taskScore }: CardsSectionProps) => {
 		},
 		{
 			title: 'Task score',
-			value: taskScore?.toString() || '0', // Use the prop value here
+			value: taskScore?.toString() || '0',
 			subtitle: 'Scorepoints'
 		},
 		{
@@ -27,18 +27,20 @@ const CardsSection = ({ taskScore }: CardsSectionProps) => {
 		}
 	]
 	return (
-		<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4">
 			{cardsData.map((card, index) => (
 				<Card
 					key={index}
-					className="flex flex-col items-center justify-center py-2 shadow-md shadow-black/20"
+					className="flex flex-col items-center justify-center py-2 shadow-md shadow-black/20 2xl:py-4"
 				>
-					<h4 className="text-xs font-semibold">{card.title}</h4>
-					<span className="text-xl font-bold text-blue-600">
+					<h4 className="text-xs font-semibold 2xl:text-sm">
+						{card.title}
+					</h4>
+					<span className="text-xl font-bold text-blue-600 2xl:text-2xl">
 						{card.value}
 					</span>
 					{card.subtitle && (
-						<span className="text-xs font-semibold">
+						<span className="text-xs font-semibold 2xl:text-sm">
 							{card.subtitle}
 						</span>
 					)}
