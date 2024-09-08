@@ -1,17 +1,24 @@
 'use client'
 
-import { Check, SquareArrowUp, X } from 'lucide-react'
-import { Button } from './ui/button'
+import React, { useTransition } from 'react'
 import { useRouter, useParams } from 'next/navigation'
+import { Check, SquareArrowUp, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import LoadingSpinner from '@/components/loading-spinner'
 
 interface ButtonsSectionProps {
 	taskId: number
 	taskScore: number | null
 }
 
-const ButtonsSection = ({ taskId, taskScore }: ButtonsSectionProps) => {
+const ButtonsSection: React.FC<ButtonsSectionProps> = ({
+	taskId,
+	taskScore
+}) => {
 	const router = useRouter()
 	const params = useParams()
+	const [isCompleting, startCompletingTransition] = useTransition()
+	const [isEscalating, startEscalatingTransition] = useTransition()
 
 	const markTaskAsDone = async (): Promise<{
 		success: boolean
@@ -52,16 +59,21 @@ const ButtonsSection = ({ taskId, taskScore }: ButtonsSectionProps) => {
 	}
 
 	const handleStatusUpdate = async (action: 'complete' | 'escalate') => {
-		const result =
+		const transition =
 			action === 'complete'
-				? await markTaskAsDone()
-				: await escalateTask()
-		if (result.success && result.redirectUrl) {
-			router.push(result.redirectUrl)
-		}
+				? startCompletingTransition
+				: startEscalatingTransition
+		transition(async () => {
+			const result =
+				action === 'complete'
+					? await markTaskAsDone()
+					: await escalateTask()
+			if (result.success && result.redirectUrl) {
+				router.push(result.redirectUrl)
+			}
+		})
 	}
 
-	// redirects without setting any status
 	const skipTask = () => {
 		const currentId = parseInt(params.taskId as string)
 		const nextId = currentId + 1
@@ -81,16 +93,26 @@ const ButtonsSection = ({ taskId, taskScore }: ButtonsSectionProps) => {
 				<Button
 					className="flex items-center bg-blue-500 px-2 py-1 text-xs hover:bg-blue-600 sm:px-3"
 					onClick={() => handleStatusUpdate('escalate')}
+					disabled={isEscalating}
 				>
-					<SquareArrowUp className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />{' '}
+					{isEscalating ? (
+						<LoadingSpinner className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
+					) : (
+						<SquareArrowUp className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
+					)}{' '}
 					Escalate task
 				</Button>
 				<Button
 					className="flex items-center bg-blue-500 px-2 py-1 text-xs hover:bg-blue-600 sm:px-3"
 					onClick={() => handleStatusUpdate('complete')}
+					disabled={isCompleting}
 				>
-					<Check className="mr-1 h-4 w-4 sm:h-5 sm:w-5" /> Task
-					completed
+					{isCompleting ? (
+						<LoadingSpinner className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
+					) : (
+						<Check className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
+					)}{' '}
+					Task completed
 				</Button>
 			</div>
 		</div>

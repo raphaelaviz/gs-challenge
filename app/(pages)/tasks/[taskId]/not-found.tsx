@@ -4,7 +4,7 @@ export default function NotFound() {
 	return (
 		<div className="flex min-h-screen flex-col items-center justify-center text-center">
 			<h1 className="mb-4 text-4xl font-bold">
-				Could not find requested task
+				Could not find requested task or there's no more tasks to show
 			</h1>
 			<Link
 				href="/tasks"

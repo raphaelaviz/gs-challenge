@@ -20,6 +20,10 @@ npm run dev
 -   Component Tree Overview: [Component Structure](https://tree-flow-umber.vercel.app/tree/91d08b4b-9696-4d51-ae1b-dd40db25c64c)
     --- Click on the green icons to switch between component trees.
 
+## Important Note
+
+I hardcoded some credentials across the project (DB credentials and weather API key) for there's no need to create and .env file and paste the values. In a real-world scenario, I would use environment variables to store these credentials.
+
 ## Tech Stack
 
 -   React
@@ -40,7 +44,7 @@ npm run dev
 -   [x] Dynamic Task List
 -   [-] Responsive Design
     -   The design is responsive for mobile and desktop, but might need to be tweaked for bigger screen sizes.
--   [x] Moving to the next task upon completing, escalating or skipping the currenttask
+-   [x] Moving to the next task upon completing, escalating or skipping the current task.
 -   [x] Button to go back to task list
     -   The icons on the sidenav are links to the Tasks Page.
 -   [x] Additional features (Bonus)
@@ -58,4 +62,4 @@ npm run dev
 -   [x] Real task status updates
 -   Tasks status are updated upon clicking the Task Completed button and the Escalate Task button.
 -   [x] Simple confirmation dialog upon clicking the Power Button on the sidenav.
--   The intent was to show a basic usage of the Zustand state management library, since I found no real application for it in this project.
+-   The intent was to show a basic usage of the Zustand state management library, since I found no real need for a state management solution in this project. I'm happy to discuss this further.
