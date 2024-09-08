@@ -22,9 +22,7 @@ const ConfirmationDialog = () => {
 						Are you sure you want to turn off the system?
 					</DialogTitle>
 					<DialogDescription>
-						This action cannot be undone. This will permanently
-						delete your account and remove your data from our
-						servers.
+						You will be redirected to Google.com.
 					</DialogDescription>
 				</DialogHeader>
 				<DialogFooter className="flex items-center space-x-3">

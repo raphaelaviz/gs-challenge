@@ -6,6 +6,8 @@ import WeatherWidget from '@/components/weather-widget'
 import { getUserScorePointsInfo } from '@/db/queries/score-point-queries'
 import { getAllTasks } from '@/db/queries/tasks-queries'
 
+export const dynamic = 'force-dynamic'
+
 export default async function TasksPage() {
 	const tasks = await getAllTasks()
 	const { currentScorePoints, dailyGoal } = await getUserScorePointsInfo(1)
