@@ -22,7 +22,7 @@ export default async function TasksPage() {
 
 					<p className="text-center font-semibold">
 						{currentScorePoints >= 300
-							? 'You reached your daily goal!'
+							? 'You reached your daily goal!!!'
 							: `${300 - currentScorePoints} more to reach the daily goal`}
 					</p>
 				</Card>
